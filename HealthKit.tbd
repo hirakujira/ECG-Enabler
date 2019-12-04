@@ -1,0 +1,9 @@
+--- !tapi-tbd-v2
+archs:           [ armv7, armv7s, arm64, arm64e ]
+platform:        ios
+install-name:    /System/Library/Frameworks/HealthKit.framework/HealthKit
+objc-constraint: none
+exports:         
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _HKSynchronizeNanoPreferencesUserDefaults ]
+...

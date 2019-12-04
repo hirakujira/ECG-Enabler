@@ -1,0 +1,11 @@
+#!/bin/sh
+if [[ $1 == install || update ]]; then
+
+declare -a cydia
+    cydia=($CYDIA)
+    if [[ ${CYDIA+@} ]]; then
+        eval "echo 'finish:reload' >&${cydia[0]}"
+    else
+        echo "Please respring your device."
+    fi
+fi
