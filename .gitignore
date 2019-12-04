@@ -10,3 +10,4 @@ _/*
 */obj/*
 **/obj/*
 .vscode/*
+layout/DEBIAN/postinst
