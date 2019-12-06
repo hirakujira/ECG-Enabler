@@ -6,7 +6,7 @@ postinst_FILES = postinst.mm
 postinst_FRAMEWORKS = Foundation
 postinst_INSTALL_PATH = /tmp
 postinst_CODESIGN_FLAGS = -Sentitlements.xml
-postinst_CFLAGS = -DHELPER_HEADER -fobjc-arc
+postinst_CFLAGS = -fobjc-arc
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/tool.mk

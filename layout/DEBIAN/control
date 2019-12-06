@@ -1,11 +1,11 @@
 Package: tw.hiraku.ecgenabler
 Priority: optional
 Section: Tweaks
-Maintainer: Hiraku <dev@hiraku.tw>
+Maintainer: Hiraku <tim@apple.com>
 Architecture: iphoneos-arm
-Version: 1.0
+Version: 1.1
 Description: Enable ECG function in your country
 Name: ECG Enabler
 Depends: mobilesubstrate, firmware (>= 12.2)
-Author: Hiraku <dev@hiraku.tw>
+Author: Hiraku <tim@apple.com>
 Depiction: Enable ECG function in your country

@@ -1,6 +1,6 @@
 TWEAK_NAME = ECGEnabler
 ECGEnabler_OBJCC_FILES = Tweak.xm
-ECGEnabler_CFLAGS = -F$(SYSROOT)/System/Library/CoreServices -fobjc-arc
+ECGEnabler_CFLAGS = -F$(SYSROOT)/System/Library/CoreServices -fobjc-arc -Wno-deprecated-declarations
 ECGEnabler_LDFLAGS += HealthKit.tbd
 ECGEnabler_FRAMEWORKS = UIKit
 TARGET = :clang::11.0
