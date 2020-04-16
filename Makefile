@@ -11,6 +11,8 @@ ECGEnabler_LDFLAGS += -Wl,-segalign,4000
 GO_EASY_ON_ME = 1
 FINALPACKAGE = 1
 
+SUBPROJECTS += postinst
+
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/bundle.mk
 include $(THEOS_MAKE_PATH)/tweak.mk

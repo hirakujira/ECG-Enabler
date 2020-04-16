@@ -1,3 +1,5 @@
+#import <firmware.h>
+
 @interface HKHeartRhythmAvailability
 - (void)resetElectrocardiogramOnboarding;
 + (id)activePairedDevice;
@@ -10,6 +12,7 @@
 extern "C" int HKSynchronizeNanoPreferencesUserDefaults(NSString* key, NSSet* value);
 
 BOOL alertShowed = NO;
+BOOL resetECG = NO;
 #define dictPath @"/var/mobile/Library/Preferences/com.apple.private.health.heart-rhythm.plist"
 
 %group NanoSettingsSync
@@ -87,4 +90,14 @@ BOOL alertShowed = NO;
 
 %ctor {
     %init;
+
+    if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_13_4) {
+        %init(BypassMPN);
+    }
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:dictPath]) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:dictPath];
+        if ([dict[@"ECGEnablerDone"] boolValue] != YES) {
+            %init(NanoSettingsSync);
+        }
+    }
 }
