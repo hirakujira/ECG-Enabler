@@ -1,6 +1,8 @@
 #!/bin/sh
 if [[ $1 == install || update ]]; then
 
+rm -f /var/mobile/Library/Preferences/com.apple.private.health.heart-rhythm.plist
+
 declare -a cydia
     cydia=($CYDIA)
     if [[ ${CYDIA+@} ]]; then
