@@ -4,12 +4,13 @@
 
 Enable ECG function anywhere with Apple Watch S4+ which is bought from ECG-enabled region.
 
-From iOS 12.2 and above, you must connect your iPhone to a cellular network of ECG enabled countries / regions to enable ECG function of paired Apple Watch (which is from ECG-enabled region), this is inconvenient for whom buy Apple Watch from overseas.
-This can bypass the cellular network check.
+From iOS 12.2 and newer iOS versions, you must connect your iPhone to a cellular network in ECG enabled countries / regions to enable ECG feature of the Apple Watch (which model is from ECG-enabled regions), this is inconvenient for people whom has Apple Watch from overseas.
 
-This tweak is based on [my research](https://hiraku.tw/2019/10/4951/). However, with function hooking, you don't need to pair Apple Watch again, like the original post for non-jailbroken iPhone.
+Now, you can use this tweak to bypass the cellular network checking.
 
-Appple Watch bought from non-ECG enabled region can't activate ECG without watchOS jailbreak, which does not exist now.
+This tweak is based on [my research](https://hiraku.tw/2019/10/4951/). Moreover, with method swizzling (hook), you don't need to pair Apple Watch again, like the original post for non-jailbroken iPhone.
+
+Appple Watch bought from non-ECG enabled region can't activate ECG with this method.
 
 ## Requirement
 
