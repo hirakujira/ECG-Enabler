@@ -14,17 +14,24 @@ Appple Watch bought from non-ECG enabled region can't activate ECG with this met
 
 ## Requirement
 
-Apple Watch S4+ which is bought from [ECG enabled countries / regions](https://www.apple.com/watchos/feature-availability/#branded-ecg).
+For iOS 13.5 + watchOS 6.2.5:
+Any Apple Watch S4+ can use this tweak to activate ECG.
 
-## Notice
-1. If it doesn't work, unpair your Apple Watch and pair again without restoring settings (watch backups).
-2. Once ECG is enabled on your Apple Watch, you can remove this tweak.
-3. You can restore rootFS / unjailbreak and keep this hack working.
-4. Reset all setttings / erase all content and settings / restore var snapshot from your iPhone would make you lose this hack.
+iOS 13.4.1 + watchOS 6.2.1 or below:
+You need Apple Watch S4+ which is bought from [ECG enabled countries / regions](https://www.apple.com/watchos/feature-availability/#branded-ecg).
 
 ## Install
 
 ECG Enabler is available on BigBoss repo. Just install it with your favorite package manager.
+
+## Tutorial
+1. After the installation, open "ECG" section in the Health.app on your iPhone.
+2. Check whether ECG app is installed on your Apple Watch.
+3. If it doesn't work, unpair your Apple Watch and pair again.
+4. When you re-pair your Apple Watch, choose not to restore backup if your device is bought from [ECG enabled countries / regions](https://www.apple.com/watchos/feature-availability/#branded-ecg). Otherwise, restore the backup.
+3. Once ECG is enabled on your Apple Watch, you can remove this tweak.
+4. You can restore rootFS / unjailbreak and keep this hack working.
+5. If your device is not iOS 13.5 + watchOS 6.2.5, reset all setttings / erase all content and settings / restore var snapshot from your iPhone would make you lose this hack.
 
 ## License
 

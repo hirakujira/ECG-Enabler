@@ -64,13 +64,9 @@ BOOL resetECG = NO;
         [self setElectrocardiogramOnboardingCompleted];
         [self setAllowInstallingElectrocardiogramWatchApp:YES];
 
-        // id device = [%c(HKHeartRhythmAvailability) activePairedDevice];
-        // if (device) {
-        //     [%c(HKHeartRhythmAvailability) installElectrocardiogramAppOnActiveWatch:device];
-        // }
         resetECG = YES;
 
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ECG Enabler Success" message:@"ECG feature is enabled, you can remove this tweak now.\nIf ECG app doesn't appear on your Apple Watch, try to search and download it in the AppStore of your watch." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ECG Enabler Success" message:@"ECG feature is enabled, you can remove this tweak now.\nIf ECG app doesn't appear on your Apple Watch, then you must re-pair your Apple Watch with restoring backup." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
 
         NSString *path = @"/var/mobile/Library/Preferences/com.apple.private.health.heart-rhythm.plist";
