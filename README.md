@@ -19,7 +19,7 @@ iOS            | watchOS     | Can use this hack
 13.4 ~ 13.4.1  |6.2 ~ 6.2.1  |No
 13.5 ~ 13.7    |6.2.5 ~ 6.2.8|Yes, all regions
 14.0 ~ 14.2    |6.2.5 ~ 6.2.8|Yes, all regions
-14.0 ~ 14.2    |7.0 ~ 7.0.1  |No
+14.0 ~         |7.0 ~ 7.0.1  |No. It's a bug of watchOS
 14.0 ~ 14.2    |7.0.2 ~ 7.1  |Yes, all regions
 14.3 ~         |7.2 ~        |Yes, all regions. Also supports [ECG algorithm v2](https://developer.apple.com/documentation/healthkit/hkappleecgalgorithmversion/hkappleecgalgorithmversion2?language=objc)
 
