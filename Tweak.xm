@@ -1,4 +1,5 @@
 #import <firmware.h>
+#import <UIKit/UIKit.h>
 
 @interface HKHeartRhythmAvailability
 - (void)resetElectrocardiogramOnboarding;
@@ -13,12 +14,14 @@ extern "C" int HKSynchronizeNanoPreferencesUserDefaults(NSString* key, NSSet* va
 
 BOOL alertShowed = NO;
 BOOL resetECG = NO;
+
 #define dictPath @"/var/mobile/Library/Preferences/com.apple.private.health.heart-rhythm.plist"
+#define defaultsId @"com.apple.private.health.heart-rhythm"
 
 %group NanoSettingsSync
 %hook HKHeartRhythmAvailability
 - (bool)isElectrocardiogramOnboardingCompleted {
-    HKSynchronizeNanoPreferencesUserDefaults(@"com.apple.private.health.heart-rhythm", [NSSet setWithObject:@"HKElectrocardiogramOnboardingCompleted"]);
+    HKSynchronizeNanoPreferencesUserDefaults(defaultsId, [NSSet setWithObject:@"HKElectrocardiogramOnboardingCompleted"]);
     
     if (alertShowed == NO) {
         id device = [%c(HKHeartRhythmAvailability) activePairedDevice];
@@ -49,7 +52,7 @@ BOOL resetECG = NO;
 }
 
 - (bool)isAtrialFibrillationDetectionOnboardingCompleted {
-    HKSynchronizeNanoPreferencesUserDefaults(@"com.apple.private.health.heart-rhythm", [NSSet setWithObject:@"HKAtrialFibrillationDetectionOnboardingCompleted"]);
+    HKSynchronizeNanoPreferencesUserDefaults(defaultsId, [NSSet setWithObject:@"HKAtrialFibrillationDetectionOnboardingCompleted"]);
     return YES;
 }
 %end
@@ -69,9 +72,13 @@ BOOL resetECG = NO;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ECG Enabler Success" message:@"ECG feature is enabled, you can remove this tweak now.\nIf ECG app doesn't appear on your Apple Watch, then you must re-pair your Apple Watch with restoring backup." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
 
-        NSString *path = @"/var/mobile/Library/Preferences/com.apple.private.health.heart-rhythm.plist";
-        NSDictionary *dict = @{@"HKElectrocardiogramOnboardingCompleted" : @3, @"HKAtrialFibrillationDetectionOnboardingCompleted" : @1};
-        [dict writeToFile:path atomically:YES];
+        NSNumber *ecgVersion = @3;
+        if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_14_3) {
+            ecgVersion = @4;
+        }
+
+        NSDictionary *dict = @{@"HKElectrocardiogramOnboardingCompleted" : ecgVersion, @"HKAtrialFibrillationDetectionOnboardingCompleted" : @1};
+        [dict writeToFile:dictPath atomically:YES];
     }
     return %orig;
 }
