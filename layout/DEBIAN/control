@@ -3,7 +3,7 @@ Priority: optional
 Section: Tweaks
 Maintainer: Hiraku <tim@apple.com>
 Architecture: iphoneos-arm
-Version: 1.5
+Version: 1.5.1
 Description:Enable ECG function in your country
 Name: ECG Enabler
 Depends: mobilesubstrate, firmware (>= 12.2)
