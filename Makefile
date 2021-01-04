@@ -1,13 +1,15 @@
+TARGET = :clang::12.1
+ARCHS = arm64 arm64e
+
+SDKVERSION = 10.3
+SYSROOT = $(THEOS)/sdks/iPhoneOS10.3.sdk
+
 TWEAK_NAME = ECGEnabler
 ECGEnabler_OBJCC_FILES = Tweak.xm
 ECGEnabler_CFLAGS = -F$(SYSROOT)/System/Library/CoreServices -fobjc-arc -Wno-deprecated-declarations
 ECGEnabler_LDFLAGS += HealthKit.tbd
 ECGEnabler_FRAMEWORKS = UIKit
-TARGET = :clang::11.0
-ARCHS = arm64 arm64e
-SDKVERSION = 10.3
-SYSROOT = $(THEOS)/sdks/iPhoneOS10.3.sdk
-ECGEnabler_LDFLAGS += -Wl,-segalign,4000
+
 GO_EASY_ON_ME = 1
 FINALPACKAGE = 1
 

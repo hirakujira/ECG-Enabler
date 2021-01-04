@@ -21,7 +21,7 @@ iOS            | watchOS     | Can use this hack
 14.0 ~ 14.2    |6.2.5 ~ 6.2.8|Yes, all regions
 14.0 ~         |7.0 ~ 7.0.1  |No. It's a bug of watchOS
 14.0 ~ 14.2    |7.0.2 ~ 7.1  |Yes, all regions
-14.3 ~         |7.2 ~        |Yes, all regions. Also supports [ECG algorithm v2](https://developer.apple.com/documentation/healthkit/hkappleecgalgorithmversion/hkappleecgalgorithmversion2?language=objc)
+14.3 ~         |7.2 ~        |Supports [ECG algorithm v2](https://developer.apple.com/documentation/healthkit/hkappleecgalgorithmversion/hkappleecgalgorithmversion2?language=objc) for iCloud methode devices, but this tweak doesn't work for these versions.
 
 ## Install
 
